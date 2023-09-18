@@ -1,0 +1,46 @@
+
+
+h1 {
+	font-size: 5rem;
+}
+h2 {
+	font-size: 4.5rem;
+}
+h3 {
+	font-size: 4rem;
+}
+h4 {
+	font-size: 3.5rem;
+}
+h5 {
+	font-size: 3rem;
+}
+
+button {
+	font-size: 1rem;
+	background-color: #2c374c;
+	border-radius: 8px;
+	cursor: pointer;
+	color: #fff;
+	fill: #fff;
+	padding: 8px 16px;
+	background-color: #00798a;
+	border-color: #00798a;
+}
+
+a {
+	font-size: .75rem;
+}
+
+.primary-clr {
+	background-color: #f6f7fa;
+}
+.bluetext-clr {
+	background-color: #43b3f8;
+}
+.img {
+	background-color: #d9dade;
+}
+
+
+
