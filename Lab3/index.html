@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab3</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+<body>
+  
+  <section id="wrapper">
+    <h1 id="heading">ITMD 541 - LAB3 - <span id="myName">Akash Akash</span></h1>
+    <div id="container">
+      <div id="tipCalculatorForm">
+     <div id="containerLeft">
+
+      <div class="inputBlockLight">
+        <label for="billTotal">Bill Total:</label>
+        <input type="text" id="billTotal" name="billTotal" placeholder="Enter Amount">
+      </div>
+
+      <div class="inputBlockLight">
+        <label for="tip" class="disabled-input">Tip:</label>
+        <input disabled type="range" id="tip" name="tip" value="0" min="0" max="100" step="1" class="progress">
+        <label for="tipPercentage" class="disabled-input">Tip Percentage:</label>
+        <input placeholder="0%" type="text" id="tipPercentage" class="disabled-input" disabled>
+      </div>
+
+      <div id="btnContainer">
+        <button 
+          id="resetButton" 
+          onclick="resetForm()">
+          Reset Values
+        </button>
+      </div>
+
+     </div>
+     <div id="containerRight">
+
+      <div class="inputBlockDark">
+        <label for="tipAmount" class="disabled-input">Tip Amount:</label>
+        <input placeholder="$0"  type="text" id="tipAmount" class="disabled-input" disabled>
+      </div>
+
+      <div class="inputBlockDark">
+        <label for="totalWithTip" class="disabled-input">Total Bill with Tip:</label>
+        <input placeholder="$0"  type="text" id="totalWithTip" class="disabled-input" disabled>
+      </div>
+
+     </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="./index.js"></script>
+</body>
+</html>
