@@ -8,7 +8,6 @@ const totalWithTipInput = document.getElementById('totalWithTip');
 form.addEventListener('input', function () {
   const billTotal = parseFloat(billTotalInput.value);
   const tipPercentage = parseFloat(tipInput.value);
-
   if (isNaN(billTotal)) {
     alert('Please enter valid amount!');
     resetForm();

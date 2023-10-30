@@ -23,7 +23,7 @@ body{
   padding: 0 16px;
 }
 
-#myName {
+.sc {
   color: #B34050;
 }
 
@@ -140,6 +140,10 @@ input[type="text"].disabled-input {
   
   #containerRight {
     flex: 1;
+  }
+
+  #resetButton {
+    width: 100%;
   }
 }
 
