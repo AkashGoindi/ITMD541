@@ -45,8 +45,6 @@ body{
  #container {
   background-color: #fff;
   padding: 24px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
 }
 
 #tipCalculatorForm{
