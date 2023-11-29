@@ -185,6 +185,10 @@ header {
   display: none;
 }
 
+#footer_left, #footer_right {
+  text-align: center;
+}
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {

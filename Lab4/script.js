@@ -114,12 +114,16 @@ async function searchLatLon() {
 }
 
 function displayDetails(data, key) {
+  const [hours, minutes, seconds] = data.day_length.split(':').map(Number);
+  console.log(hours);
+  const formattedTime = `${hours}h ${minutes}m ${seconds}s`;
   document.getElementById(`${key}_sunrise`).innerHTML = data.sunrise;
   document.getElementById(`${key}_sunset`).innerHTML = data.sunset;
   document.getElementById(`${key}_dawn`).innerHTML = data.dawn;
   document.getElementById(`${key}_dusk`).innerHTML = data.dusk;
   document.getElementById(`${key}_solar`).innerHTML = data.solar_noon;
   document.getElementById(`${key}_timezone`).innerHTML = data.timezone;
+  document.getElementById(`${key}_length`).innerHTML = `( Duration: ${formattedTime} )`;
 }
 
 function removePlaceholder() {
