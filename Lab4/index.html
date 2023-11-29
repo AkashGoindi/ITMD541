@@ -14,13 +14,20 @@
 <body>
   <div class="sun"></div>
   <div class="moon"></div>
+  <div id="loader"></div>
   <main id="wrapper">
       <!-- Left Section -->
       <section id="wrapper_left">
         <h3 id="site_name">Bright&Night.com</h3>
         <div class="searchContainer">
 
-          <h4 style="color: #fff">Fetch Sunrise and Sunset</h4>
+
+          <div class="input_label_container">
+            <h4 style="color: #fff">Fetch Sunrise and Sunset</h4>
+            <button 
+            onclick="fetchCurrentLoc()"
+            class="btn btn-outline-light btn-sm">Current Location</button>
+          </div>
           <div class="">
             <input 
               autocomplete="off"

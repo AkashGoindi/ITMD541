@@ -52,6 +52,7 @@ function displayResults(results) {
     listItem.textContent = result.display_name;
 
     listItem.addEventListener("click", async() => {
+      document.getElementById('loader').style.display = 'block';
       selectedLocation = result;
       locationSearch.innerHTML= " "+ result.display_name;
       document.getElementById('ss_info_blank').style.display = 'none';
@@ -63,7 +64,7 @@ function displayResults(results) {
       const tomorrow = await apicall(lat, lon, 'tomorrow');
       displayLatLan(today, 'today');
       displayLatLan(tomorrow, 'tomorrow');
-
+      document.getElementById('loader').style.display = 'none';
       // Hide the dropdown
       resultsDropdown.style.display = 'none';
 
@@ -84,6 +85,26 @@ async function apicall(latitude, longitude, day) {
   } else {
     // return {data: null, status: false, message: res.body};
     console.log("jhb");
+  }
+}
+
+
+function fetchCurrentLoc() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(async function(position) {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      const today = await apicall(lat, lon, 'today');
+      const tomorrow = await apicall(lat, lon, 'tomorrow');
+      displayLatLan(today, 'today');
+      displayLatLan(tomorrow, 'tomorrow');
+      document.getElementById('ss_info_blank').style.display = 'none';
+      document.getElementById('ss_info').style.display = 'block';
+      locationSearch.innerHTML = " Current Location";
+    });
+  } else {
+    alert("Geolocation is not supported by this browser.");
+    document.getElementById('loader').style.display = 'none';
   }
 }
 
