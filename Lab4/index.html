@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="anim.css">
+  <!-- <link rel="stylesheet" href="anim.css"> -->
 </head>
 
 <body>
@@ -52,7 +52,7 @@
       <!-- Right Section -->
       <section id="wrapper_right">
         <div id="ss_info_blank">
-          <div class="d-flex flex-column justify-content-center align-items-center" style="">
+          <div class="d-flex flex-column justify-content-center align-items-center">
             <img src="./images/sun.png" class="mb-3"/>
             <p class="mb-0" style="color: #fff"> Welcome</p>
             <p style="color: #fff">To begin, enter location to search.</p>
@@ -62,11 +62,18 @@
         <div id="ss_info">
           <h5 class="pl-2 pr-2" style="color: orangered; text-align: center;">
             Location:
-            <span style="color: #fff" id="locationSearch">
-            </span></h5>
+            <span style="color: #fff" id="locationSearch"></span>
+            <span style="color: #fff" id="locationLatLon"></span>
+          </h5>
           <hr style="color: #fff" />
           <div class="p-4 mb-3">
-            <h3 style="color: #fff"><u>Today</u></h3>
+            <div class="d-flex justify-content-between align-items-center">
+              <h3 style="color: #fff"><u>Today</u></h3>
+              <div class="text-center">
+                <p style="color: #fff" class="mb-0">Timezone</p>
+                <h5 style="color: orangered;" id="today_timezone"></h5>
+              </div>
+            </div>
             <div class="grid-container mt-3">
               <div class="customCard bg-dawn">
                 <img src="./images/dawn.png" height="64px" width="64px" />
@@ -96,11 +103,24 @@
                   <p class="time" id="today_sunset">00.00</p>
                 </div>
               </div>
+              <div class="customCard bg-solar">
+                <img src="./images/noon.png" height="64px" width="64px" />
+                <div class="text-end">
+                  <span class="phaseText">Solar Noon</span>
+                  <p class="time" id="today_solar">00.00</p>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="p-4 mb-3">
-            <h3 style="color: #fff"><u>Tomorrow</u></h3>
+            <div class="d-flex justify-content-between align-items-center">
+              <h3 style="color: #fff"><u>Today</u></h3>
+              <div class="text-center">
+                <p style="color: #fff" class="mb-0">Timezone</p>
+                <h5 style="color: orangered;" id="tomorrow_timezone"></h5>
+              </div>
+            </div>
             <div class="grid-container mt-3">
               <div class="customCard bg-dawn">
                 <img src="./images/dawn.png" height="64px" width="64px" />
@@ -128,6 +148,13 @@
                 <div class="text-end">
                   <span class="phaseText">Sunset</span>
                   <p class="time" id="tomorrow_sunset">00.00</p>
+                </div>
+              </div>
+              <div class="customCard bg-solar">
+                <img src="./images/noon.png" height="64px" width="64px" />
+                <div class="text-end">
+                  <span class="phaseText">Solar Noon</span>
+                  <p class="time" id="tomorrow_solar">00.00</p>
                 </div>
               </div>
             </div>

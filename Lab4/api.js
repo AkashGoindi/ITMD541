@@ -12,7 +12,7 @@ const getDetails = async (latitude, longitude, day) => {
     } else {throw new Error("Something went wrong!");}
   } catch (error) {
     console.error('Error:', error);
-    return {data: null, status: false, message: "Something Wrong Happened !"};
+    return {data: null, status: false, message: error.message};
   }
 };
 
@@ -21,7 +21,6 @@ const searchPlace = async (searchString) => {
   const url = `https://geocode.maps.co/search?q=${searchString}`;
   try {
     const response = await axios.get(url);
-    console.log("....", response);
     if (response.status !== 200) {
       throw new Error(`Failed to fetch geocoding data. Status: ${response.status}`);
     }

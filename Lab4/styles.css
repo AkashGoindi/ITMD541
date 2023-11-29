@@ -15,7 +15,7 @@
 }
 
 #wrapper {
-  /* background: #000; */
+  background: #000;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -102,6 +102,7 @@
 }
 
 .customCard {
+  overflow: hidden;
   display: flex;
   padding: 20px;
   align-items: center;
@@ -132,6 +133,11 @@
   background-position: center;
 }
 
+.bg-solar {
+  background-image: url('./images/test.jpeg');
+  background-position: center;
+}
+
 .phaseText {
   color: #fff;
 }
@@ -147,14 +153,21 @@
 }
 
 #ss_info{
-  display: none;
+  /* display: none; */
+  display: block;
 }
+
+
 
 #ss_info_blank {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#ss_info_blank{
+  display: none;
 }
 
 #footer_right {
@@ -181,6 +194,8 @@
     flex-direction: column;
   }
 
+  .grid-container {grid-template-columns: repeat(2, 1fr);};
+
   .list-group li {
     padding: 10px;
     border: 0px;
@@ -201,6 +216,10 @@
   display: flex;
   flex-direction: column;
   padding: 8px;
+}
+
+.phaseText {
+  align-self: center;
 }
 
 .time {
