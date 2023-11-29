@@ -16,7 +16,7 @@ const errorMsg = document.getElementById("error_msg");
     };
   };
 
-  // 800 m.sec onpurpose Delay
+  // 800 m.sec on purpose delay
   //This will avoid too many api calls on typing fast.
   const debouncedSearch = debounce(async () => {
     const searchTerm = searchInput.value.trim();
@@ -46,6 +46,7 @@ function displayDropdown(results) {
     listItem.textContent = result.display_name;
 
     listItem.addEventListener("click", async() => {
+      showLoader();
       const { lat, lon } = result;
       locationSearch.innerHTML=  " "+ result.display_name;
       locationLatLon.innerHTML =  `( ${lat}, ${lon} )`;
@@ -64,6 +65,7 @@ async function reteriveSunData(lat, lon) {
   const tomorrow = await sunriseSunsetApi(lat, lon, 'tomorrow');
   displayDetails(today, 'today');
   displayDetails(tomorrow, 'tomorrow');
+  hideLoader();
 }
 
 async function sunriseSunsetApi(latitude, longitude, day) {
@@ -76,6 +78,7 @@ async function sunriseSunsetApi(latitude, longitude, day) {
 }
 
 function fetchCurrentLoc() {
+  showLoader();
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(async function(position) {
       const lat = position.coords.latitude;
@@ -83,9 +86,14 @@ function fetchCurrentLoc() {
       reteriveSunData(lat, lon);
       removePlaceholder();
       locationSearch.innerHTML = " Current Location";
-    });
+      locationLatLon.innerHTML =  `( ${lat}, ${lon} )`;
+    },function(error) {
+      hideLoader();
+    }
+  );
   } else {
     alert("Geolocation is not supported by this browser.");
+    hideLoader();
   }
 }
 
@@ -117,4 +125,12 @@ function displayDetails(data, key) {
 function removePlaceholder() {
   document.getElementById('ss_info_blank').style.display = 'none';
   document.getElementById('ss_info').style.display = 'block';
+}
+
+function showLoader() {
+  document.getElementById('loader').style.display="block";
+}
+
+function hideLoader() {
+  document.getElementById('loader').style.display="none";
 }
