@@ -4,7 +4,6 @@ const resultsList = resultsDropdown.querySelector("ul");
 const locationSearch = document.getElementById("locationSearch");
 const locationLatLon = document.getElementById("locationLatLon");
 const errorMsg = document.getElementById("error_msg");
-const loadingMsg = document.getElementById("loading_msg");
 
 
   const debounce = (func, delay) => {

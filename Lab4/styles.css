@@ -3,6 +3,18 @@
   padding: 0;
 }
 
+.p_color{
+  color: orangered;
+}
+
+.w_color{
+  color: #fff;
+}
+
+.b_color {
+  color: #000;
+}
+
 #loader {
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -23,10 +35,15 @@
   position: relative;
 }
 
-#site_name {
-  align-self: center;
+header {
+  text-align: center;
   color: #fff;
 }
+
+/* #site_name {
+  align-self: center;
+  color: #fff;
+} */
 
 #wrapper_left {
   height: 100vh;
@@ -101,6 +118,10 @@
   width: 100%;
 }
 
+.customCard:nth-child(5) {
+  grid-column: span 2;
+}
+
 .customCard {
   overflow: hidden;
   display: flex;
@@ -134,7 +155,7 @@
 }
 
 .bg-solar {
-  background-image: url('./images/test.jpeg');
+  background-image: url('./images/solar.jpeg');
   background-position: center;
 }
 
@@ -194,14 +215,12 @@
     flex-direction: column;
   }
 
-  .grid-container {grid-template-columns: repeat(2, 1fr);};
-
   .list-group li {
     padding: 10px;
     border: 0px;
     color: #000;
     cursor: pointer;
-    background-color: #fff;
+    background-color: #fff !important;
     border-bottom: 1px dashed #000;
   }
 
