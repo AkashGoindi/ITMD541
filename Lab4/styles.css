@@ -200,7 +200,7 @@ header {
 @media only screen and (max-width: 768px) {
   #wrapper {
     flex-direction: column;
-    min-height: 100vh;
+    height: auto;
   }
   #wrapper_left {
     width: 100% !important;
