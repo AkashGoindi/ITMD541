@@ -28,6 +28,11 @@
   padding-top: 50vh;
 }
 
+#site_name {
+  font-weight: 700;
+  
+}
+
 #wrapper {
   /* background: #000; */
   height: 100vh;
@@ -190,8 +195,9 @@ header {
 }
 
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+/* =============MEDIA QUERIES============== */
+
+@media only screen and (max-width: 768px) {
   #wrapper {
     flex-direction: column;
     min-height: 100vh;
@@ -204,11 +210,10 @@ header {
   .searchContainer {
     margin: 150px 0px 75px 0px;
   }
-
   .input_label_container {
     flex-direction: column;
+    margin-bottom: 40px;
   }
-
   .list-group li {
     padding: 10px;
     border: 0px;
@@ -217,24 +222,20 @@ header {
     background-color: #fff !important;
     border-bottom: 1px dashed #000;
   }
-
   #wrapper_right {
     width: 100%;
     flex: 1;
     padding: 12px;
     height: auto;
   }
-
 .customCard {
   display: flex;
   flex-direction: column;
   padding: 8px;
 }
-
 .phaseText {
   align-self: center;
 }
-
 .time {
   font-size: 24px;
   font-weight: 700;
@@ -246,5 +247,45 @@ header {
 #footer_right {
   display: block;
 }
-
 }
+
+/* Example breakpoint for medium-sized screens (e.g., tablets) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+
+  #wrapper_left {
+    width: 50%;
+    padding: 20px;
+  }
+
+  .input_label_container {
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  
+
+  #wrapper_right {
+    width: 50%;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .customCard:nth-child(5) {
+    grid-column: span 1;
+  }
+
+  .customCard {
+    align-items: center;
+  }
+
+  .time {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff
+  }
+  
+  
+}
+

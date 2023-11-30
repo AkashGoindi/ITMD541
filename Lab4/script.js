@@ -33,7 +33,6 @@ const errorMsg = document.getElementById("error_msg");
       const results = await searchLatLon();
       displayDropdown(results);
     } catch (error) {
-      console.error('Error:', error);
     }
   }, 800);
 
@@ -85,7 +84,7 @@ function fetchCurrentLoc() {
       const lon = position.coords.longitude;
       reteriveSunData(lat, lon);
       removePlaceholder();
-      locationSearch.innerHTML = " Current Location";
+      locationSearch.innerHTML = " My Current Location";
       locationLatLon.innerHTML =  `( ${lat}, ${lon} )`;
     },function(error) {
       hideLoader();
@@ -115,7 +114,6 @@ async function searchLatLon() {
 
 function displayDetails(data, key) {
   const [hours, minutes, seconds] = data.day_length.split(':').map(Number);
-  console.log(hours);
   const formattedTime = `${hours}h ${minutes}m ${seconds}s`;
   document.getElementById(`${key}_sunrise`).innerHTML = data.sunrise;
   document.getElementById(`${key}_sunset`).innerHTML = data.sunset;
@@ -123,7 +121,7 @@ function displayDetails(data, key) {
   document.getElementById(`${key}_dusk`).innerHTML = data.dusk;
   document.getElementById(`${key}_solar`).innerHTML = data.solar_noon;
   document.getElementById(`${key}_timezone`).innerHTML = data.timezone;
-  document.getElementById(`${key}_length`).innerHTML = `( Duration: ${formattedTime} )`;
+  document.getElementById(`${key}_length`).innerHTML = `(${formattedTime} Long)`;
 }
 
 function removePlaceholder() {

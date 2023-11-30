@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Akash Goindi | SunriseSunset App</title>
+  <title>SunTrackHub.io</title>
   <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon_io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon_io/favicon-16x16.png">
@@ -24,7 +24,7 @@
     <!-- Left Section -->
     <section id="wrapper_left">
       <header>
-        <h3 id="site_name">Bright&Night.com</h3>
+        <h3 id="site_name">SunTrackHub.io</h3>
       </header>
 
       <section class="searchContainer">
@@ -32,8 +32,8 @@
           <h4 class="w_color">Fetch Sunrise and Sunset</h4>
           <button 
             onclick="fetchCurrentLoc()" 
-            class="btn btn-outline-light btn-sm">
-            Current Location
+            class="btn btn-outline-light btn-md">
+            My Location
           </button>
         </div>
 
@@ -57,22 +57,22 @@
 
     <!-- Right Section -->
     <section id="wrapper_right">
-      <div id="ss_info_blank">
+      <section id="ss_info_blank">
         <div class="d-flex flex-column justify-content-center align-items-center">
           <img src="./images/sun.png" class="mb-3" />
           <p class="mb-0 w_color"> Welcome</p>
           <p class="w_color">To begin, enter location to search.</p>
           </p>
         </div>
-      </div>
-      <div id="ss_info">
+      </section>
+      <section id="ss_info">
         <h5 class="pl-2 pr-2 p_color text-center">
           Location:
           <span class="w_color" id="locationSearch"></span>
           <span class="w_color" id="locationLatLon"></span>
         </h5>
         <hr class="w_color" />
-        <div class="p-4 mb-3">
+        <section class="p-4 mb-3">
           <div class="d-flex justify-content-between align-items-start">
             <div>
               <h4 class="w_color mb-0"><u>Today</u></h4>
@@ -120,9 +120,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div class="p-4 mb-3">
+        <section class="p-4 mb-3">
           <div class="d-flex justify-content-between align-items-center">
             <div>
               <h4 class="w_color mb-0"><u>Tomorrow</u></h4>
@@ -170,8 +170,8 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </section>
       <footer id="footer_right">
         <p class="mb-0 w_color">Developed by : AkashGoindi</p>
         <p class="w_color">Powered by : SunriseSunset.io | geocode.maps.co</p>
